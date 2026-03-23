@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Journey | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="text-center" style="margin-bottom:48px;">
+            <h1 id="pageTitle" style="font-size:38px;font-weight:900;letter-spacing:-1px;margin-bottom:12px;">Plan Your Journey</h1>
+            <p id="pageSubtitle" style="color:var(--text-muted);font-size:17px;">Smart commute with real-time crowd and fare intelligence.</p>
+        </div>
+        <div class="card" style="max-width:540px;margin:0 auto;">
+            <div class="form-group">
+                <label>Origin Stop / Station</label>
+                <select id="origin"></select>
+            </div>
+            <div class="form-group">
+                <label>Destination Stop / Station</label>
+                <select id="destination"></select>
+            </div>
+            <div class="form-group">
+                <label>Departure</label>
+                <div style="display:flex;gap:12px;margin-bottom:12px;">
+                    <button class="btn primary-btn" style="flex:1;font-size:14px;padding:10px;" id="leaveNowBtn">🕐 Leave Now</button>
+                    <button class="btn secondary-btn" style="flex:1;font-size:14px;padding:10px;" id="scheduleLaterBtn">📅 Schedule Later</button>
+                </div>
+
+                <!-- Schedule UI (Hidden by default) -->
+                <div id="scheduleUI" style="display:none; margin-top:8px; border:1px solid var(--border); border-radius:var(--radius); padding:20px; background:var(--bg-secondary,#f8fafc);">
+                    <p style="font-size:13px;font-weight:700;margin-bottom:14px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;">Schedule Your Trip</p>
+                    <div class="form-group">
+                        <label>Select Date</label>
+                        <input type="date" id="scheduleDate" class="form-control"
+                            style="width:100%; border:1px solid var(--border); border-radius:var(--radius); padding:10px; font-size:15px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Time</label>
+                        <input type="time" id="scheduleTime" class="form-control"
+                            style="width:100%; border:1px solid var(--border); border-radius:var(--radius); padding:10px; font-size:15px;">
+                    </div>
+                    <!-- Error message -->
+                    <div id="scheduleError" class="error-msg" style="display:none;"></div>
+                    <!-- Confirm button -->
+                    <button id="confirmScheduleBtn" class="btn primary-btn" style="width:100%;padding:12px;font-size:15px;margin-top:4px;">
+                        ✅ Confirm Schedule
+                    </button>
+                    <!-- Confirmation badge -->
+                    <div id="scheduleConfirmed" class="schedule-banner" style="display:none;margin-top:12px;">
+                        <span id="scheduleConfirmedText"></span>
+                    </div>
+                </div>
+
+                <!-- Journey error -->
+                <div id="journeyError" class="error-msg" style="display:none; margin-top:10px;"></div>
+
+                <button id="checkCrowdBtn" class="btn primary-btn"
+                    style="width:100%;padding:16px;font-size:17px;margin-top:16px;">Find Transport &amp; Check Crowd →</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

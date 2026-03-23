@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafeRide India - Predictive Crowd Alert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">SafeRide India</div>
+    <nav>
+        <a href="city-selection.html">Home</a>
+        <a href="safety-alerts.html">Alerts</a>
+        <a href="mytrips.html">My Trips</a>
+        <a href="report.html">Report</a>
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<section class="container">
+
+    <!-- RED ALERT BANNER -->
+    <div class="alert-banner">
+        ⚠ High overcrowding expected in the next 20 minutes
+        <p>Predictive analytics indicate severe congestion on your planned route.</p>
+    </div>
+
+    <!-- ALERT DETAILS CARD -->
+    <div class="alert-card">
+
+        <div class="route-header">
+            <div>
+                <h2>Route 47L: Secunderabad → Mehdipatnam</h2>
+                <p>Predicted Surge: <strong>18:10 - 18:30</strong></p>
+            </div>
+        </div>
+
+        <div class="reason-tags">
+            <span class="tag orange">Peak Hour</span>
+            <span class="tag red">Busy Location: Begumpet</span>
+            <span class="tag blue">Expected Crowd: 92%</span>
+        </div>
+
+        <div class="impact-section">
+            <p>
+                Passenger density has increased by 40% in the last 10 minutes.
+                Safety comfort levels are expected to reduce significantly.
+                We recommend choosing a safer alternative route.
+            </p>
+        </div>
+
+        <div class="buttons">
+            <button class="primary-btn">View Safer Alternatives</button>
+            <button class="secondary-btn">Continue Anyway</button>
+        </div>
+
+    </div>
+
+    <div class="info-box">
+        <strong>Live Updates:</strong> Predictions refresh every 2 minutes using GPS and ticketing data.
+    </div>
+
+</section>
+
+<button onclick="viewAlternatives()" class="primary-btn">
+    View Safer Alternatives
+</button>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

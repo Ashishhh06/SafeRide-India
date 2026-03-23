@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Bus Tracker | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+            <div>
+                <h1 style="font-size:30px;font-weight:900;margin-bottom:8px;">📍 Live Bus Tracking</h1>
+                <p style="color:var(--text-muted);">Real-time position of your selected bus.</p>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;" id="liveStatusActions">
+                <!-- Buttons injected by JS so they can be transport-aware -->
+            </div>
+        </div>
+        <div id="trackingPanel">
+            <div class="card text-center">
+                <p style="color:var(--text-muted);">Loading tracker...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/tracking.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose City & Transport | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 620px;
+            margin: 0 auto 48px;
+        }
+
+        .city-card {
+            background: white;
+            border: 2.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
+        }
+
+        .city-card:hover {
+            border-color: var(--city-accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .city-card.active {
+            border-color: var(--city-accent);
+            background: linear-gradient(180deg, #eff6ff, white);
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .mode-tile {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, transform .2s, box-shadow .2s;
+        }
+
+        .mode-tile:hover {
+            border-color: var(--city-accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .mode-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .mode-select-btn {
+            margin-top: 16px;
+            display: inline-block;
+            background: var(--city-accent);
+            color: white;
+            padding: 9px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: opacity .2s;
+        }
+
+        .mode-tile:hover .mode-select-btn {
+            opacity: .85;
+        }
+
+        .step-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--city-accent);
+            color: white;
+            font-weight: 800;
+            font-size: 15px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">&#x1F6E1;&#xFE0F; SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html" class="active">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+
+        <!-- ═══ STEP 1: CITY ═══ -->
+        <div id="step1" class="step active">
+            <div class="step-header">
+                <h1 style="font-size:38px;font-weight:900;letter-spacing:-1px;margin-bottom:10px;">
+                    <span class="step-num">1</span> Choose Your City
+                </h1>
+                <p style="color:var(--text-muted);font-size:17px;">Select the city where you want to travel today.</p>
+            </div>
+
+            <div class="cities-grid">
+                <div class="city-card" id="hyd-card" onclick="pickCity('Hyderabad','#1e40af')">
+                    <div style="font-size:52px;margin-bottom:12px;">&#x1F54C;</div>
+                    <h2 style="font-size:22px;font-weight:800;margin-bottom:6px;">Hyderabad</h2>
+                    <p style="color:var(--text-muted);font-size:13px;">TSRTC Bus &middot; Metro &middot; MMTS</p>
+                    <div style="margin-top:14px;" class="badge badge-low">Available</div>
+                </div>
+                <div class="city-card" id="blr-card" onclick="pickCity('Bengaluru','#15803d')">
+                    <div style="font-size:52px;margin-bottom:12px;">&#x1F333;</div>
+                    <h2 style="font-size:22px;font-weight:800;margin-bottom:6px;">Bengaluru</h2>
+                    <p style="color:var(--text-muted);font-size:13px;">BMTC Bus &middot; Namma Metro &middot; Suburban
+                    </p>
+                    <div style="margin-top:14px;" class="badge badge-low">Available</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 2: TRANSPORT ═══ -->
+        <div id="step2" class="step">
+            <div class="step-header">
+                <h1 style="font-size:38px;font-weight:900;letter-spacing:-1px;margin-bottom:10px;">
+                    <span class="step-num">2</span> Select Transport
+                </h1>
+                <p style="color:var(--text-muted);font-size:17px;">
+                    Travelling in <strong id="cityLabel">—</strong>. Pick your mode.
+                </p>
+            </div>
+
+            <!-- Hyderabad modes -->
+            <div id="modes-Hyderabad" class="modes-grid" style="display:none;">
+                <div class="mode-tile" onclick="pickMode('bus','journey.html')">
+                    <div class="mode-icon">&#x1F68C;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">TSRTC Bus</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">Express, AC &amp; Ordinary</p>
+                    <div class="mode-select-btn">Select Bus &rarr;</div>
+                </div>
+                <div class="mode-tile" onclick="pickMode('metro','metro.html')">
+                    <div class="mode-icon">&#x1F687;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">Hyderabad Metro</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">Red, Blue &amp; Green Lines</p>
+                    <div class="mode-select-btn">Select Metro &rarr;</div>
+                </div>
+                <div class="mode-tile" onclick="pickMode('mmts','mmts-live.html')">
+                    <div class="mode-icon">&#x1F686;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">MMTS Rail</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">Suburban Rail Network</p>
+                    <div class="mode-select-btn">Select MMTS &rarr;</div>
+                </div>
+            </div>
+
+            <!-- Bengaluru modes -->
+            <div id="modes-Bengaluru" class="modes-grid" style="display:none;">
+                <div class="mode-tile" onclick="pickMode('bus','journey.html')">
+                    <div class="mode-icon">&#x1F68C;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">BMTC Bus</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">City-wide AC &amp; Ordinary</p>
+                    <div class="mode-select-btn">Select Bus &rarr;</div>
+                </div>
+                <div class="mode-tile" onclick="pickMode('metro','metro.html')">
+                    <div class="mode-icon">&#x1F687;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">Namma Metro</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">Purple &amp; Green Lines</p>
+                    <div class="mode-select-btn">Select Metro &rarr;</div>
+                </div>
+                <div class="mode-tile" onclick="pickMode('suburban','mmts-live.html')">
+                    <div class="mode-icon">&#x1F686;</div>
+                    <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">Suburban Rail</h3>
+                    <p style="color:var(--text-muted);font-size:13px;">KSRTC Suburban Network</p>
+                    <div class="mode-select-btn">Select Rail &rarr;</div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;">
+                <button onclick="goBack()" class="btn secondary-btn">&larr; Change City</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+
+    <script>
+        var selectedCity = '';
+
+        function pickCity(city, theme) {
+            selectedCity = city;
+            localStorage.setItem('selectedCity', city);
+
+            // Apply theme
+            document.documentElement.style.setProperty('--city-accent', theme);
+
+            // Highlight card
+            document.getElementById('hyd-card').classList.remove('active');
+            document.getElementById('blr-card').classList.remove('active');
+            document.getElementById(city === 'Hyderabad' ? 'hyd-card' : 'blr-card').classList.add('active');
+
+            // Update nav badge
+            document.getElementById('navCityBadge').textContent = city;
+            document.getElementById('cityLabel').textContent = city;
+
+            // Show mode grids for this city
+            document.getElementById('modes-Hyderabad').style.display = 'none';
+            document.getElementById('modes-Bengaluru').style.display = 'none';
+            document.getElementById('modes-' + city).style.display = 'grid';
+
+            // Swap steps
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        }
+
+        function pickMode(type, dest) {
+            localStorage.setItem('selectedTransport', type);
+            window.location.href = dest;
+        }
+
+        function goBack() {
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step1').classList.add('active');
+        }
+
+        // Restore city theme on page load
+        (function () {
+            var saved = localStorage.getItem('selectedCity');
+            var themes = { 'Hyderabad': '#1e40af', 'Bengaluru': '#15803d' };
+            if (saved && themes[saved]) {
+                document.documentElement.style.setProperty('--city-accent', themes[saved]);
+                document.getElementById('navCityBadge').textContent = saved;
+            }
+        })();
+    </script>
+
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMTS / Suburban Rail | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <h2 id="mmtsPageTitle" style="font-size:18px;font-weight:800;margin-bottom:18px;">🚆 MMTS Rail</h2>
+            <div class="form-group">
+                <label>Route</label>
+                <select id="mmtsRoute"></select>
+            </div>
+            <div id="mmtsStations"></div>
+            <div style="margin-top:20px;">
+                <a href="report.html" class="btn secondary-btn" style="width:100%;text-align:center;font-size:13px;">📢
+                    Report Issue</a>
+            </div>
+        </aside>
+        <section class="main-content">
+            <div
+                style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+                <div>
+                    <h2 style="font-size:26px;font-weight:900;margin-bottom:6px;">Upcoming Trains</h2>
+                    <p style="color:var(--text-muted);">Real-time arrivals, seat availability, and crowd levels.</p>
+                </div>
+                <a href="smart-alternatives.html" class="btn secondary-btn" style="font-size:13px;padding:8px 14px;">🔀
+                    Alternatives</a>
+            </div>
+            <div id="mmtsList"></div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

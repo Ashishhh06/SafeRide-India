@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f6f7f8;
+    font-size: 14px;
+}
+
+
+
+.primary-btn {
+    background: #0d46a0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+
+
+
+/* ===== LOGIN PAGE ===== */
+/* ===== LOGIN PAGE FIXED DESIGN ===== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d46a0;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.help-btn {
+    margin-left: 15px;
+    padding: 6px 12px;
+    border: 1px solid #0d46a0;
+    background: #eaf1ff;
+    color: #0d46a0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Wrapper for Centering */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    flex-direction: column;
+}
+
+
+
+/* Login Card */
+.login-card {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+.login-card label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Preferences Box */
+.preferences {
+    margin-top: 20px;
+    background: #eaf1ff;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #0d46a0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #0b3b87;
+}
+
+.secondary-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bottom-text {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #666;
+}
+
+
+
+
+
+
+
+/* ===== CITY SELECTION ===== */
+.transport-card {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.transport-card:hover {
+    transform: translateY(-4px);
+    border-color: #0d46a0;
+}
+
+.transport-card.active {
+    border-color: #0d46a0;
+    background-color: #eef3fb;
+}
+
+
+
+
+
+
+
+/* ===== JOURNEY ===== */
+.time-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-buttons button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #0d46a0;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.time-buttons button.active {
+    background-color: #0d46a0;
+    color: white;
+}
+
+
+
+
+
+
+
+
+/* ===== LIVE CROWD ===== */
+.bus-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.bus-card.selected {
+    border-color: #0d46a0;
+    background-color: #eef3fb;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== LIVE STATUS ===== */
+.status-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 6px solid #0d46a0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+
+
+
+
+/* ===== CROWD ALERT ===== */
+.alert-banner {
+    background: #ef4444;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+/* ===== SMART ALTERNATIVES ===== */
+.option-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.option-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.option-card.recommended {
+    border: 2px solid green;
+}
+
+
+
+
+/* ===== SAFETY ALERTS ===== */
+.high-risk {
+    border-top: 6px solid #dc2626;
+    background: #fff5f5;
+}
+
+
+
+
+
+
+/* ===== REPORT PAGE ===== */
+.report-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+/* ===== BOOKING PAGE ===== */
+.booking-section {
+    display: flex;
+    gap: 40px;
+    padding: 60px 10%;
+}
+
+.booking-section .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.success-card {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}

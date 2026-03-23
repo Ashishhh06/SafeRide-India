@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- QRCode.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="text-center" style="margin-bottom:40px;">
+            <h1 style="font-size:36px;font-weight:900;margin-bottom:12px;">Confirm Booking</h1>
+            <p style="color:var(--text-muted);">Review your journey details and pay to get your ticket with QR code.</p>
+        </div>
+        <div style="max-width:620px;margin:0 auto;" id="bookingSummary">
+            <div class="card text-center">
+                <p style="color:var(--text-muted);">Loading booking details...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/qr.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

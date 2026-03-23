@@ -1,0 +1,7 @@
+no of seats available 
+no of people standing 
+
+in bus :(detecting the crowd)
+biometric
+ai 
+

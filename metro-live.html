@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hyderabad Metro - Live Status</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🚇 SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="metro-wrapper">
+
+        <!-- LINE STRIP -->
+        <div class="metro-line-strip">
+            <span class="line-dot"></span>
+            <h1 id="routeTitle">Miyapur — Raidurg</h1>
+            <span class="line-name">Blue Line</span>
+        </div>
+
+        <div class="metro-layout">
+
+            <!-- LEFT SIDE: TIMELINE -->
+            <div class="metro-timeline">
+
+                <h2>Station Timeline</h2>
+
+                <div class="station">
+                    <div class="circle start"></div>
+                    <div class="station-info">
+                        <strong>Miyapur</strong>
+                        <span>Departure: 10:30 AM</span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="station">
+                    <div class="circle"></div>
+                    <div class="station-info">
+                        <strong>Ameerpet</strong>
+                        <span>Interchange</span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="station active">
+                    <div class="circle end"></div>
+                    <div class="station-info">
+                        <strong>Raidurg</strong>
+                        <span>Arrival: 10:55 AM</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE: TRAIN STATUS -->
+            <div class="metro-status">
+
+                <h2>Upcoming Trains</h2>
+
+                <div class="metro-card high">
+                    <div><strong>Arrival:</strong> 4 mins</div>
+                    <div class="crowd high-text">Crowd: High</div>
+                    <div><strong>Fare:</strong> ₹45</div>
+                </div>
+
+                <div class="metro-card low">
+                    <div><strong>Arrival:</strong> 12 mins</div>
+                    <div class="crowd low-text">Crowd: Low</div>
+                    <div><strong>Fare:</strong> ₹45</div>
+                </div>
+
+                <button id="metroBookingBtn" class="primary-btn">
+                    Proceed to Booking
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Bus Status | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <!-- Schedule Banner — shown when trip is scheduled -->
+        <div id="scheduleBanner" class="schedule-banner" style="display:none; margin-bottom:20px;"></div>
+
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+            <div>
+                <p style="color:var(--text-muted);font-size:13px;margin-bottom:6px;font-weight:600;text-transform:uppercase;">LIVE BUS STATUS</p>
+                <h1 id="routeTitle" style="font-size:30px;font-weight:900;letter-spacing:-0.5px;margin-bottom:6px;">Available Buses</h1>
+                <p style="color:var(--text-muted);">City: <strong id="cityLabel"></strong> — Select a bus to board or track.</p>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="journey.html" class="btn secondary-btn" style="font-size:14px;padding:10px 16px;">← Modify Journey</a>
+                <a href="smart-alternatives.html" class="btn" style="background:var(--warning);color:white;font-size:14px;padding:10px 16px;">🔀 Alternatives</a>
+                <a href="report.html" class="btn secondary-btn" style="font-size:14px;padding:10px 16px;">📢 Report</a>
+            </div>
+        </div>
+
+        <div id="busList"></div>
+
+        <div class="smart-panel" style="margin-top:28px;">
+            <div style="display:flex;gap:12px;align-items:center;">
+                <span style="font-size:24px;">💡</span>
+                <p style="font-size:14px;color:var(--city-accent);font-weight:600;margin:0;">Buses arriving after 15 minutes are predicted to have 40% less crowd during peak hours. Use the Smart Alternatives panel if a bus is full.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

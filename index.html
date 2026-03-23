@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRide India | Multi-City Smart Transit</title>
+    <meta name="description"
+        content="SafeRide India — real-time crowd intelligence, live bus tracking, QR tickets and smart alternatives across Hyderabad and Bengaluru.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .stats-bar {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--city-accent);
+        }
+
+        .stat-item .lbl {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .city-pill {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="container">
+            <div style="margin-bottom:16px;">
+                <span class="city-pill" style="background:#dbeafe;color:#1e40af;">🕌 Hyderabad</span>
+                <span class="city-pill" style="background:#dcfce7;color:#15803d;">🌳 Bengaluru</span>
+            </div>
+            <h1>India's Smartest<br><span>City Transit Platform</span></h1>
+            <p>Real-time crowd intelligence, live bus tracking, QR tickets, and smart route alternatives. Now across two
+                cities.</p>
+            <div class="hero-buttons">
+                <a href="city-selection.html" class="btn primary-btn" style="font-size:17px;padding:16px 36px;">Choose
+                    City & Start →</a>
+                <a href="smart-alternatives.html" class="btn secondary-btn"
+                    style="font-size:17px;padding:16px 36px;">View Alternatives</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAT BAR -->
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="num">2</div>
+                <div class="lbl">Cities</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">150+</div>
+                <div class="lbl">Bus Routes</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">5</div>
+                <div class="lbl">Metro Lines</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">5</div>
+                <div class="lbl">Rail Routes</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">Live</div>
+                <div class="lbl">QR Tickets</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSPORT MODES -->
+    <section class="container section-padding">
+        <h2 class="text-center" style="font-size:30px;font-weight:800;margin-bottom:12px;">All Transport, One Platform
+        </h2>
+        <p class="text-center" style="color:var(--text-muted);margin-bottom:48px;">Choose your city and mode — data
+            updates based on your selection.</p>
+        <div class="grid-3" style="max-width:900px;margin:0 auto;">
+            <a href="city-selection.html" class="card feature-card text-center" style="cursor:pointer;color:inherit;">
+                <div style="font-size:48px;margin-bottom:14px;">🚌</div>
+                <h3 style="font-weight:800;margin-bottom:8px;">City Bus</h3>
+                <p style="color:var(--text-muted);font-size:14px;">TSRTC (Hyderabad) &amp; BMTC (Bengaluru) with seat
+                    counting and live tracking.</p>
+            </a>
+            <a href="city-selection.html" class="card feature-card text-center" style="cursor:pointer;color:inherit;">
+                <div style="font-size:48px;margin-bottom:14px;">🚇</div>
+                <h3 style="font-weight:800;margin-bottom:8px;">Metro Rail</h3>
+                <p style="color:var(--text-muted);font-size:14px;">Hyderabad 3-line Metro &amp; Bengaluru 2-line Namma
+                    Metro with interchange detection.</p>
+            </a>
+            <a href="city-selection.html" class="card feature-card text-center" style="cursor:pointer;color:inherit;">
+                <div style="font-size:48px;margin-bottom:14px;">🚆</div>
+                <h3 style="font-weight:800;margin-bottom:8px;">Suburban Rail</h3>
+                <p style="color:var(--text-muted);font-size:14px;">MMTS (Hyderabad) &amp; KSRTC Suburban (Bengaluru) —
+                    most affordable option.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FEATURE HIGHLIGHTS -->
+    <section style="background:linear-gradient(135deg,var(--city-accent),#1d4ed8);color:white;padding:80px 0;">
+        <div class="container">
+            <h2 class="text-center" style="font-size:30px;font-weight:800;margin-bottom:48px;">Why SafeRide India?</h2>
+            <div class="grid-auto">
+                <div class="text-center">
+                    <div style="font-size:40px;margin-bottom:14px;">🎟</div>
+                    <h3 style="margin-bottom:8px;font-weight:700;">QR Ticket Booking</h3>
+                    <p style="opacity:.85;font-size:14px;">Book instantly, receive a scannable QR code ticket. No app
+                        required.</p>
+                </div>
+                <div class="text-center">
+                    <div style="font-size:40px;margin-bottom:14px;">💺</div>
+                    <h3 style="margin-bottom:8px;font-weight:700;">Seat Availability</h3>
+                    <p style="opacity:.85;font-size:14px;">Know exactly how many seats are left before you reach the
+                        stop. Bus Full? We alert you.</p>
+                </div>
+                <div class="text-center">
+                    <div style="font-size:40px;margin-bottom:14px;">📢</div>
+                    <h3 style="margin-bottom:8px;font-weight:700;">Complaint System</h3>
+                    <p style="opacity:.85;font-size:14px;">Report overcrowding, delays, or misconduct directly to the
+                        transport authority.</p>
+                </div>
+                <div class="text-center">
+                    <div style="font-size:40px;margin-bottom:14px;">🔀</div>
+                    <h3 style="margin-bottom:8px;font-weight:700;">Smart Alternatives</h3>
+                    <p style="opacity:.85;font-size:14px;">AI-ranked route options when your vehicle is crowded, late,
+                        or full.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Smart City Transit — Hyderabad & Bengaluru</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

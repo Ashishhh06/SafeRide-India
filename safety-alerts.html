@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Alerts | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="city-selection.html">Home</a>
+                <a href="safety-alerts.html" class="active">Alerts</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <h1 style="font-size:34px;font-weight:900;margin-bottom:10px;">⚠️ Safety Alerts</h1>
+        <p style="color:var(--text-muted);margin-bottom:36px;">Live risk zones and crowd warnings across both city
+            networks.</p>
+
+        <div class="alert-critical" style="margin-bottom:28px;">
+            <div style="font-size:36px;flex-shrink:0;">🚨</div>
+            <div>
+                <h2 style="margin-bottom:6px;">Heavy Crowd Alert: Nampally Station</h2>
+                <p style="opacity:.9;font-size:14px;">Crowd surge on Platform 1 between 5–8 PM. Delays of 25–35 min
+                    expected. Consider Metro or MMTS.</p>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:24px;">
+            <div class="card" style="border-top:5px solid var(--danger);">
+                <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+                    <h3>High Risk: Miyapur Bus Stand</h3>
+                    <span class="badge badge-high">🔴 High</span>
+                </div>
+                <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px;">Overflow from metro. Route 45D
+                    running 20 min late. Seats full on 3 buses.</p>
+                <a href="smart-alternatives.html" class="btn secondary-btn"
+                    style="width:100%;text-align:center;display:block;font-size:13px;">View Alternatives</a>
+            </div>
+            <div class="card" style="border-top:5px solid var(--warning);">
+                <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+                    <h3>Moderate: Majestic Bus Stop (BLR)</h3>
+                    <span class="badge badge-medium">⚠️ Watch</span>
+                </div>
+                <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px;">Congestion near Kempegowda Bus
+                    Station. Route 500C delayed by ~12 min.</p>
+                <a href="smart-alternatives.html" class="btn secondary-btn"
+                    style="width:100%;text-align:center;display:block;font-size:13px;">View Alternatives</a>
+            </div>
+        </div>
+
+        <div class="card" style="background:#f0fdf4;border-color:#bbf7d0;margin-bottom:24px;">
+            <h4 style="color:var(--success);margin-bottom:8px;">✅ Normal Operations</h4>
+            <p style="color:var(--text-muted);font-size:14px;">Hyderabad Metro Blue Line, Bengaluru Purple Line, MMTS
+                Lingampally route, and BMTC 201R are running normally.</p>
+        </div>
+
+        <div class="text-center">
+            <a href="report.html" class="btn primary-btn">📢 Report a New Issue</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

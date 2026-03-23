@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Planner | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar: Station Search -->
+        <aside class="sidebar">
+            <h2 style="font-size:20px;font-weight:800;margin-bottom:24px;">🚇 Metro Planner</h2>
+            <p style="color:var(--text-muted);font-size:13px;margin-bottom:24px;">Select from-to stations and the system
+                will calculate the best route with interchange info.</p>
+
+            <div class="form-group">
+                <label>From Station</label>
+                <select id="metroFrom"></select>
+            </div>
+            <div class="form-group">
+                <label>To Station</label>
+                <select id="metroTo"></select>
+            </div>
+            <button id="metroSearchBtn" class="btn primary-btn" style="width:100%;padding:14px;font-size:16px;">
+                Calculate Route →
+            </button>
+
+            <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border);">
+                <h4
+                    style="font-size:13px;font-weight:700;margin-bottom:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;">
+                    Metro Lines</h4>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                    <div
+                        style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:#fff1f2;">
+                        <div style="width:14px;height:14px;border-radius:50%;background:#dc2626;flex-shrink:0;"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:13px;">Red Line</div>
+                            <div style="font-size:11px;color:var(--text-muted);">Miyapur ↔ LB Nagar</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:#eff6ff;">
+                        <div style="width:14px;height:14px;border-radius:50%;background:#1d4ed8;flex-shrink:0;"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:13px;">Blue Line</div>
+                            <div style="font-size:11px;color:var(--text-muted);">Raidurg ↔ Nagole</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:#f0fdf4;">
+                        <div style="width:14px;height:14px;border-radius:50%;background:#16a34a;flex-shrink:0;"></div>
+                        <div>
+                            <div style="font-weight:600;font-size:13px;">Green Line</div>
+                            <div style="font-size:11px;color:var(--text-muted);">JBS ↔ MGBS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main: Results -->
+        <section class="main-content">
+            <div id="metroResult">
+                <div class="card text-center" style="padding:80px 40px;">
+                    <div style="font-size:64px;margin-bottom:20px;">🚇</div>
+                    <h2 style="font-size:24px;font-weight:700;margin-bottom:12px;">Select Stations to Plan</h2>
+                    <p style="color:var(--text-muted);">Choose your From and To stations in the panel on the left. The
+                        system will find the best metro route, including interchange stations if needed.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Hyderabad Smart Transit</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

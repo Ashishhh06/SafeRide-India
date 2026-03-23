@@ -1,0 +1,1110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+    --primary: #1e40af;
+    --primary-light: #3b82f6;
+    --primary-dark: #1e3a8a;
+    --city-accent: #1e40af;
+    /* Overridden by JS per city */
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --glass: rgba(255, 255, 255, 0.82);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.10);
+    --radius: 14px;
+    --radius-sm: 8px;
+}
+
+/* ============================================================ RESET ============================================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .2s;
+}
+
+select,
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background: var(--bg-card);
+    color: var(--text-main);
+    transition: border-color .2s;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--city-accent);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ============================================================ LAYOUT ============================================================ */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.gap-12 {
+    gap: 12px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* ============================================================ NAVBAR ============================================================ */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--city-accent);
+    letteR-spacing: -0.3px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-left: 22px;
+    font-size: 14px;
+    transition: color .2s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--city-accent);
+}
+
+.login-btn {
+    padding: 8px 18px !important;
+    background: var(--city-accent) !important;
+    color: white !important;
+    border-radius: var(--radius-sm) !important;
+    font-weight: 600 !important;
+}
+
+.city-badge {
+    background: var(--city-accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 12px;
+}
+
+/* ============================================================ BUTTONS ============================================================ */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform .15s, box-shadow .2s, opacity .2s;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.primary-btn {
+    background: var(--city-accent);
+    color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.primary-btn:hover {
+    opacity: .9;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.secondary-btn {
+    background: white;
+    color: var(--city-accent);
+    border: 1.5px solid var(--border);
+}
+
+.secondary-btn:hover {
+    border-color: var(--city-accent);
+}
+
+/* ============================================================ CARDS ============================================================ */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================ BADGES ============================================================ */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.badge-low,
+.badge-success {
+    background: #d1fae5;
+    color: var(--success);
+}
+
+.badge-medium,
+.badge-warning {
+    background: #fef3c7;
+    color: var(--warning);
+}
+
+.badge-high,
+.badge-danger {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.badge-live {
+    background: #fee2e2;
+    color: var(--danger);
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+/* ============================================================ FORM ============================================================ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* ============================================================ STAT MINI ============================================================ */
+.stat-mini {
+    background: #f1f5f9;
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* ============================================================ CROWD BAR ============================================================ */
+.crowd-bar-bg {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.crowd-bar-fill {
+    height: 10px;
+    border-radius: 99px;
+    transition: width .7s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ============================================================ SEAT CHIPS ============================================================ */
+.seat-chip {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.seat-ok {
+    background: #d1fae5;
+    color: var(--success);
+}
+
+.seat-low {
+    background: #fef3c7;
+    color: var(--warning);
+}
+
+.seat-full {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.bus-full-banner {
+    background: var(--danger);
+    color: white;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ============================================================ HERO ============================================================ */
+.hero-section {
+    padding: 110px 0 80px;
+    background: radial-gradient(ellipse at top right, #eff6ff 0%, #f8fafc 60%);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero-section h1 span {
+    color: var(--city-accent);
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================ CITY SELECTION ============================================================ */
+.city-card {
+    cursor: pointer;
+    border: 2.5px solid transparent;
+    transition: border-color .2s, transform .2s;
+}
+
+.city-card:hover {
+    transform: translateY(-4px);
+}
+
+.city-card.selected {
+    border-color: var(--city-accent);
+}
+
+.city-card-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.transport-mode-card {
+    cursor: pointer;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    transition: border-color .2s, transform .2s;
+}
+
+.transport-mode-card:hover {
+    border-color: var(--city-accent);
+    transform: translateY(-3px);
+}
+
+.mode-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* ============================================================ BUS SELECT CARDS ============================================================ */
+.bus-select-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 18px;
+    transition: border-color .2s;
+}
+
+.bus-select-card:hover {
+    border-color: var(--city-accent);
+}
+
+.bus-select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bus-route-label {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.route-num {
+    color: var(--city-accent);
+    font-size: 20px;
+}
+
+/* ============================================================ DASHBOARD LAYOUT ============================================================ */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: calc(100vh - 64px);
+}
+
+.sidebar {
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    padding: 24px 18px;
+    overflow-y: auto;
+    position: sticky;
+    top: 64px;
+    max-height: calc(100vh - 64px);
+}
+
+.main-content {
+    padding: 32px 32px;
+    background: var(--bg-main);
+}
+
+/* ============================================================ METRO TIMELINE ============================================================ */
+.metro-timeline {
+    padding-left: 16px;
+}
+
+.metro-stop-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding: 5px 0 5px 28px;
+    min-height: 42px;
+}
+
+.metro-line-cell {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16px;
+}
+
+.metro-line-seg {
+    flex: 1;
+    width: 3px;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.metro-station-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.metro-start .metro-station-dot,
+.metro-end .metro-station-dot {
+    width: 18px;
+    height: 18px;
+}
+
+.metro-interchange .metro-station-dot {
+    border-width: 4px;
+    background: gold;
+}
+
+.metro-stop-name {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.interchange-badge {
+    font-size: 11px;
+    background: #fef9c3;
+    color: #a16207;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.origin-badge {
+    font-size: 11px;
+    background: #d1fae5;
+    color: var(--success);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.dest-badge {
+    font-size: 11px;
+    background: #fee2e2;
+    color: var(--danger);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.metro-line-pill {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    background: #f8fafc;
+    margin-bottom: 10px;
+}
+
+/* ============================================================ TRACKER ============================================================ */
+.tracker-timeline {
+    padding-left: 16px;
+}
+
+.tracker-stop {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding: 6px 0 6px 28px;
+    min-height: 40px;
+}
+
+.tracker-dot-past {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--success);
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+
+.tracker-dot-current {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--city-accent);
+    position: absolute;
+    left: -3px;
+    top: 11px;
+    box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.2);
+    animation: pulse 1s infinite;
+}
+
+.tracker-dot-future {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--text-muted);
+    position: absolute;
+    left: 0;
+    top: 14px;
+}
+
+.stop-passed .stop-name {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.stop-current .stop-name {
+    color: var(--city-accent);
+    font-weight: 700;
+}
+
+.stop-badge {
+    margin-left: 8px;
+    font-size: 11px;
+    background: #eff6ff;
+    color: var(--city-accent);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.stop-badge-next {
+    margin-left: 8px;
+    font-size: 11px;
+    background: #fef3c7;
+    color: var(--warning);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* ============================================================ SMART ALTERNATIVES ============================================================ */
+.alt-card {
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+    position: relative;
+    transition: border-color .2s, transform .2s;
+    overflow: hidden;
+}
+
+.alt-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--city-accent);
+}
+
+.alt-best {
+    border-color: var(--success);
+    border-width: 2px;
+}
+
+.best-badge {
+    position: absolute;
+    top: -1px;
+    left: 16px;
+    background: var(--success);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 0 0 10px 10px;
+}
+
+.tag-badge {
+    display: inline-block;
+    font-size: 12px;
+    background: #eff6ff;
+    color: var(--city-accent);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.smart-panel {
+    background: linear-gradient(120deg, #eff6ff, #e0f2fe);
+    border: 1.5px solid var(--primary-light);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 32px;
+}
+
+/* ============================================================ MMTS TIMELINE ============================================================ */
+.timeline {
+    position: relative;
+    padding-left: 28px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--city-accent);
+    z-index: 1;
+}
+
+/* ============================================================ TICKET CARD ============================================================ */
+.ticket-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 24px;
+}
+
+.ticket-strip {
+    height: 8px;
+    background: var(--city-accent);
+}
+
+.ticket-body {
+    background: white;
+    padding: 28px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px dashed var(--border);
+}
+
+.ticket-logo {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--city-accent);
+}
+
+.ticket-city {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.ticket-id-block {
+    text-align: right;
+}
+
+.ticket-id {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: monospace;
+    color: var(--text-main);
+}
+
+.ticket-status {
+    font-size: 12px;
+    color: var(--success);
+    font-weight: 600;
+}
+
+.ticket-route {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.route-from,
+.route-to {
+    flex: 1;
+}
+
+.route-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+}
+
+.route-stop {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.route-arrow {
+    color: var(--city-accent);
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.ticket-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.ticket-meta-grid div {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-l {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.meta-v {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ticket-fare {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--city-accent);
+}
+
+.qr-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-inline {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.qr-inline img,
+.qr-inline canvas {
+    width: 90px !important;
+    height: 90px !important;
+    display: block;
+}
+
+.qr-fallback {
+    font-size: 36px;
+    text-align: center;
+    font-family: monospace;
+    color: var(--text-muted);
+}
+
+.qr-fallback span {
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* ============================================================ COMPLAINT SYSTEM ============================================================ */
+.complaint-confirm {
+    display: none;
+    background: #f0fdf4;
+    border: 2px solid var(--success);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+}
+
+.complaint-confirm h2 {
+    color: var(--success);
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.complaint-id-display {
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-main);
+    background: #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 12px 0;
+}
+
+/* ============================================================ LOGIN ============================================================ */
+.login-wrapper {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 40px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+
+/* ============================================================ SUCCESS BANNER ============================================================ */
+.success-banner {
+    display: none;
+    background: #d1fae5;
+    border: 1.5px solid var(--success);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.success-banner h3 {
+    color: var(--success);
+    margin-bottom: 4px;
+}
+
+/* ============================================================ FOOTER ============================================================ */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ============================================================ TRIPS ============================================================ */
+
+/* ============================================================ RESPONSIVE ============================================================ */
+@media(max-width:900px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        max-height: none;
+        position: static;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+@media(max-width:600px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ============================================================ NEW — SCHEDULE & UX ============================================================ */
+
+/* Disabled button state */
+.btn:disabled,
+.btn[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Schedule info banner */
+.schedule-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border: 1.5px solid var(--primary-light);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-dark, #1e3a8a);
+}
+
+.schedule-banner::before {
+    content: '📅';
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* Inline error message */
+.error-msg {
+    background: #fef2f2;
+    border: 1.5px solid #fca5a5;
+    border-radius: var(--radius-sm);
+    color: #b91c1c;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 14px;
+}
+
+/* Page-level fade-in animation */
+@keyframes srFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    animation: srFadeIn 0.35s ease both;
+}
+
+/* Loading navigation overlay */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--city-accent);
+    gap: 16px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border);
+    border-top-color: var(--city-accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Button active micro-animation */
+.btn:not(:disabled):active {
+    transform: scale(0.96);
+}
+
+.btn:not(:disabled):hover {
+    transform: translateY(-1px);
+}

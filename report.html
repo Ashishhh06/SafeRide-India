@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Issue | SafeRide India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .issue-type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .issue-tile {
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s;
+        }
+
+        .issue-tile:hover,
+        .issue-tile.selected {
+            border-color: var(--city-accent);
+            background: #eff6ff;
+        }
+
+        .issue-tile input {
+            display: none;
+        }
+
+        .issue-icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">🛡️ SafeRide India</a>
+            <nav>
+                <span id="navCityBadge" class="city-badge"></span>
+                <a href="index.html">Home</a>
+                <a href="city-selection.html">Live Routes</a>
+                <a href="mytrips.html">My Trips</a>
+                <a href="report.html" class="active">Report</a>
+                <a href="login.html" class="login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="text-center" style="margin-bottom:40px;">
+            <h1 style="font-size:36px;font-weight:900;margin-bottom:12px;">📢 Report an Issue</h1>
+            <p style="color:var(--text-muted);">Submit a complaint to the City Transport Authority. No login required.
+            </p>
+        </div>
+
+        <div style="max-width:640px;margin:0 auto;">
+
+            <!-- FORM -->
+            <div class="card">
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" id="reportCity" name="city" readonly
+                            style="background:#f1f5f9;cursor:not-allowed;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transport Type</label>
+                        <select name="transport" required>
+                            <option value="">Select Transport</option>
+                            <option value="bus">🚌 Bus</option>
+                            <option value="metro">🚇 Metro</option>
+                            <option value="mmts">🚆 MMTS / Suburban</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Route Number</label>
+                        <input type="text" name="route" placeholder="e.g. Route 45D or Line 1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vehicle Number</label>
+                        <select id="reportVehicle" name="vehicle">
+                            <option value="">Select or type vehicle number</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location / Station</label>
+                        <input type="text" name="location" placeholder="e.g. Ameerpet Station, Secunderabad Bus Stand"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Issue Type</label>
+                        <div class="issue-type-grid">
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Overcrowding">
+                                <span class="issue-icon">👥</span> Overcrowding
+                            </label>
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Delay">
+                                <span class="issue-icon">⏱️</span> Delay
+                            </label>
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Misconduct">
+                                <span class="issue-icon">⚠️</span> Misconduct
+                            </label>
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Cleanliness">
+                                <span class="issue-icon">🧹</span> Cleanliness
+                            </label>
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Safety">
+                                <span class="issue-icon">🛡️</span> Safety
+                            </label>
+                            <label class="issue-tile" onclick="this.classList.toggle('selected')">
+                                <input type="radio" name="issueType" value="Other">
+                                <span class="issue-icon">📋</span> Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Describe the Issue</label>
+                        <textarea name="description"
+                            placeholder="Provide as much detail as possible about what happened..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contact Email (Optional)</label>
+                        <input type="email" name="contact" placeholder="For follow-up from authorities">
+                    </div>
+
+                    <button type="submit" class="btn primary-btn" style="width:100%;padding:15px;font-size:16px;">
+                        Submit Complaint
+                    </button>
+                </form>
+            </div>
+
+            <!-- CONFIRMATION (hidden initially) -->
+            <div class="card complaint-confirm" id="complaintConfirm">
+                <div style="font-size:56px;margin-bottom:16px;">✅</div>
+                <h2>Complaint Submitted!</h2>
+                <p style="color:var(--text-muted);margin-bottom:16px;">Your complaint has been reported to the
+                    <strong>City Transport Authority</strong>.
+                </p>
+                <div class="complaint-id-display" id="complaintId">CMP-XXXXXX</div>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Submitted at: <span
+                        id="complaintTime"></span></p>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Save your Complaint ID for future
+                    reference.</p>
+                <div style="display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;">
+                    <a href="city-selection.html" class="btn primary-btn">Back to Home</a>
+                    <button
+                        onclick="document.getElementById('reportForm').style.display='block';document.getElementById('complaintConfirm').style.display='none';"
+                        class="btn secondary-btn">Submit Another</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SafeRide India | Multi-City Smart Transit</p>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/appState.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
